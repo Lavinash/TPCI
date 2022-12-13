@@ -1,7 +1,12 @@
+version: 2
 jobs:
   build:
-    machine:
-      image: ubuntu
+    working_directory: /dockerapp1
+    docker:
+      - image: docker:17.05.0-ce-git
+      
     steps:
       - checkout
-      - run: docker build . -t tpcicd
+      - setup_remote_docker
+      - run: 
+          command: docker build . -t tpcicd
