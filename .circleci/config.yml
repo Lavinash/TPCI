@@ -1,7 +1,7 @@
 jobs:
   build:
     machine:
-      image: circleci/node:10
+      image: ubuntu
     steps:
       - checkout
       - run: docker build . -t tpcicd
