@@ -14,7 +14,7 @@ jobs:
           command: docker run -d --name=test -p 8080:8080 lavidoker/tpcicd2:latest && wget localhost:8080
       - run:
           name: push image
-          command: echo $DOCKER_USR && docker login -u "$DOCKER_USR" -p "$DOCKER_PASSWORD" && docker push lavidoker/tpcicd2:latest
+          command: docker login -u "$DOCKER_USR" -p "$DOCKER_PASSWORD" && docker push lavidoker/tpcicd2:latest
           
           
      
