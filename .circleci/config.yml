@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    runs-on: circleci/node:10
+    image: circleci/node:10
     steps:
       - checkout
       - run:
