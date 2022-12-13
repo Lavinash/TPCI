@@ -8,13 +8,13 @@ jobs:
       - checkout
       - run: 
           name: Build image
-          command: docker build . -t lavidoker/tpcicdNode:latest
+          command: docker build . -t lavidoker/tpcicd2:latest
       - run:
           name: Test docker
           command: docker run -d --name=test -p 8080:8080 tpcicd && wget localhost:8080
       - run:
           name: push image
-          command: docker login -u "$DOCKER_USR" -p "$DOCKER_PASSWORD" && docker push lavidoker/tpcicdNode:latest
+          command: docker login -u "$DOCKER_USR" -p "$DOCKER_PASSWORD" && docker push lavidoker/tpcicd2:latest
           
           
      
