@@ -11,7 +11,7 @@ jobs:
           command: docker build . -t lavidoker/tpcicd2:latest
       - run:
           name: Test docker
-          command: docker run -d --name=test -p 8080:8080 tpcicd && wget localhost:8080
+          command: docker run -d --name=test -p 8080:8080 lavidoker/tpcicd2:latest && wget localhost:8080
       - run:
           name: push image
           command: docker login -u "$DOCKER_USR" -p "$DOCKER_PASSWORD" && docker push lavidoker/tpcicd2:latest
