@@ -11,7 +11,7 @@ jobs:
           command: docker build . -t tpcicd
       - run:
           name: Test docker
-          command: docker run --name=test -p 8080:8080 tpcicd && wget localhost:8080 
+          command: docker run -d --name=test -p 8080:8080 tpcicd && wget localhost:8080 
           
           
      
