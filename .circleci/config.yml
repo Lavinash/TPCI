@@ -1,9 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /dockerapp1
-    docker:
-      - image: circleci/node:10
+    machine: true
       
     steps:
       - checkout
